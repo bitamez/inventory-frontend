@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory &amp; Sales Management</title>
+  <!-- Apply theme before React mounts to prevent flash of wrong theme.
+       Default is 'light'. Only use 'dark' if the user explicitly chose it. -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      // Reset any stale non-explicit value back to light default
+      var theme = (stored === 'dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
